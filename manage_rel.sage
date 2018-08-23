@@ -2,7 +2,6 @@ vars_to_save = ["al", "be", "ga", "pi", "ep"]
 def add_rel_to_dict(rrr, rel_dict):
     do_monos =[]
     for m in rrr.monomials():
-        print m, m.degree()
         if m.degree() == 1:
             do_monos.append(m)
 
