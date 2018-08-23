@@ -16,7 +16,16 @@ def transition(H0gens, f, coefs_to_check):
         b[i] = expand_at(f,point)[expon]
         for j,gen in enumerate(H0gens):
             M[i,j] = expand_at(gen,point)[expon]
-            
+    
+    print "M:"
+    for row in M.rows():
+        print row
+        
+        
+    print "b:"
+    print b
+    
+    print "reduced:"
     result = M.augment(b).echelon_form()
     for row in result.rows():
         print row
