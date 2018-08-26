@@ -1,5 +1,5 @@
 vars_to_save = ["al", "be", "ga", "pi", "ep"]
-def add_rel_to_dict(rrr, rel_dict):
+def add_rel_to_dict(rrr, rel_dict,print_unsolved_rels = False):
     do_monos =[]
     for m in rrr.monomials():
         if m.degree() == 1:
@@ -13,7 +13,8 @@ def add_rel_to_dict(rrr, rel_dict):
     if len(doe_monos) == 0:
         if len(do_monos) >0:
             raise Exception("Must eliminate reserved var!!!!!")
-        print "This relation cannot be solved for a single variable:", rrr
+        if print_unsolved_rels:
+            print "This relation cannot be solved for a single variable:", rrr
     else:
         m = doe_monos[0]
         

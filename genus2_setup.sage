@@ -231,11 +231,11 @@ def HH(j,p, i,k):
     #S = i,k
     return ry("H_j_ik*H_p_ik",j=j,p=p,i=i,k=k), ry("c_pj_ik*H_j_ik + c_jp_ik*H_p_ik + a_ij_ik*a_ip_ik*f_i_ik + a_kj_ik*a_kp_ik*f_k_ik + hshsc_jp_ik",j=j,p=p,i=i,k=k)
 
-def fH(i,j,k):
-    #S = i,k
+def fH(i,k,j):
+    #S = i, k
     return ry("f_i_ik*H_j_ik",i=i,j=j,k=k), ry("b_ij_ik * H_j_ik + a_ij_ik*h_i_ik + d_iij_ik * f_i_ik + d_kij_ik * f_k_ik + fhsc_ij_ik",i=i,j=j,k=k)
 
 def hH(i,k,j):
-    #S = ik
+    #S = i, k
     return ry("h_i_ik*H_j_ik", i=i,k=k,j=j), ry("e_ij_ik*H_j_ik + a_ij_ik*f_i_ik^2 + r_ij_ik*h_i_ik + s_iij_ik*f_i_ik + s_kij_ik*f_k_ik + hhsc_ij_ik",i=i,k=k,j=j)
 
